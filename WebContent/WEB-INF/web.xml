@@ -14,8 +14,6 @@
 <servlet-mapping>
 <servlet-name>Serv</servlet-name>
 <url-pattern>/insc</url-pattern>
-
-
 </servlet-mapping>
 
 

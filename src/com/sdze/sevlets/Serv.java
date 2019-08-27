@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sdze.beans.Client;
+import com.sdze.form.Form;
+
 
 @WebServlet("/Serv")
 public class Serv extends HttpServlet {
@@ -29,7 +32,13 @@ public class Serv extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String nom=request.getParameter(nom);
+		Form form = new Form();
+		Client client=form.clt(request);
+		
+		
+		request.setAttribute("form", form);
+		request.setAttribute("client", client);
+	
 		
 		this.getServletContext().getRequestDispatcher(vu).forward(request, response);
 		
